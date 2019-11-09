@@ -3,24 +3,19 @@ payload = '{"locale":"ru","point_a_name":"Source","point_b_name":"Target","point
 payload_dict = json.loads(payload)
 print(type(payload_dict))
 print(payload_dict)
-#===============================================================================
+#==============================================================================================
 print(payload_dict)
 new_payload = json.dumps(payload_dict)
 print(new_payload)
-#===============================================================================
+#==============================================================================================
 # Этот код совершает запрос на сервер 2gis и сохраняет результат в data
-
 import requests
-
 #request_url = 'https://catalog.api.2gis.ru/ctx/2.0/global?key=rurbbn3446'
-
 request_url = 'https://catalog.api.2gis.ru/ctx/2.0/moscow?key=rurbbn3446'
 payload_ctx = '{"locale":"ru","enable_schedule":false,"source":{"point":{"lon":37.610316,"lat":55.747845},"object_id":"4504235282781932","name":"Source"},"target":{"point":{"lon":37.62576,"lat":55.7458},"object_id":"4504235282711290","name":"Target"},"transport":["bus","trolleybus","tram","shuttle_bus","metro","suburban_train","funicular_railway","monorail","river_transport","cable_car","light_rail","premetro","light_metro","aeroexpress","pedestrian"],"purpose":"routeSearch","viewport":{"topLeft":{"x":37.61024342190405,"y":55.7514265905093},"bottomRight":{"x":37.62544511062968,"y":55.74120700809857},"zoom":15.809352289673843}}'
-
 #request_url = 'https://catalog.api.2gis.ru/ctx/2.0/moscow?key=rurbbn3446'
 #payload_ped = '{"locale":"ru","point_a_name":"Source","point_b_name":"Target","points":[{"type":"pedo","x":37.610316,"y":55.747845},{"type":"pedo","x":37.62576,"y":55.7458}],"type":"pedestrian","purpose":"autoSearch","viewport":{"topLeft":{"x":37.607544074845514,"y":55.75009527409279},"bottomRight":{"x":37.62543257248807,"y":55.73806861272502},"zoom":15.574551660132045}}'
 data = requests.post(url=request_url, data=payload_ctx)
-
 
 print(data)
 print(response)
